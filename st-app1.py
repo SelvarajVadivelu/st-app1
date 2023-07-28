@@ -1,5 +1,9 @@
 import streamlit as st
 import pandas as pd
-import seaborn as sns
-st.title("This is my Title")
-st.write("Imported Pandas")
+import numpy as np
+st.title("This is My App")
+df = pd.DataFrame(
+   np.random.randn(50, 20),
+   columns=('col %d' % i for i in range(20)))
+
+st.dataframe(df)  # Same as st.write(df)
